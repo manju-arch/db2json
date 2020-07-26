@@ -1,0 +1,23 @@
+db2 connect to sample
+db2 GRANT DBADM ON DATABASE TO USER DB2ADMIN
+db2 GRANT CREATETAB ON DATABASE TO USER DB2ADMIN
+
+db2 create database jsondb automatic storage yes using codeset utf-8 territory us collate using system pagesize 32 K
+
+db2nosql.bat -user db2admin -hostName localhost -port 50000 -db jsondb -setup disable -password <PASSWORD>
+
+wplistener.bat -start -mongoPort 27017 -userid db2admin -password <PASSWORD> -dbName jsondb 
+
+mongodb://[db2admin:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
+
+https://www.ibm.com/support/knowledgecenter/SSEPEK_11.0.0/json/src/tpc/db2z_jsonworkingwithdocs.html?view=embed
+
+https://www.ibm.com/support/knowledgecenter/SSEPEK_11.0.0/json/src/tpc/db2z_jsonconnecttodb2batabase.html?view=embed
+
+https://www.ibm.com/support/knowledgecenter/en/SSEPEK_11.0.0/json/src/tpc/db2z_examplesqljson.html
+
+https://www.ibm.com/support/knowledgecenter/SSEPGG_11.1.0/com.ibm.swg.im.dbclient.json.doc/doc/t0061301.html
+
+https://www.ibm.com/developerworks/data/library/techarticle/dm-1306nosqlforjson4/
+
+
