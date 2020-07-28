@@ -18,14 +18,12 @@ public class MongoDb2 {
 		DB database = mongo.getDB("jsondb");
 		database.createCollection("sampleCollection", null);
 		DBCollection dbCollection = database.getCollection("sampleCollection");
-		/*
-		 * BasicDBObject document = new BasicDBObject(); document.put("name",
-		 * "Shubham"); document.put("company", "Baeldung");
-		 * dbCollection.insert(document);
-		 */
+		
+		//insert(dbCollection);
+		 
 		
 		BasicDBObject searchQuery = new BasicDBObject();
-		searchQuery.put("name", "Shubham");
+		searchQuery.put("name", "Manju");
 		DBCursor cursor = dbCollection.find(searchQuery);
 		 
 		while (cursor.hasNext()) {
@@ -33,6 +31,12 @@ public class MongoDb2 {
 		}
 		
 		mongo.close();
+	}
+	
+	public static void insert(DBCollection dbCollection) {
+		  BasicDBObject document = new BasicDBObject(); document.put("name",
+		  "Manju"); document.put("company", "Google");
+		  dbCollection.insert(document);
 	}
 
 }

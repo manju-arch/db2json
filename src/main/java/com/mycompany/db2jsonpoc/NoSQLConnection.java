@@ -15,7 +15,7 @@ public class NoSQLConnection {
 	    int port = 50000;
 	    String databaseName = "sample";
 	    String user = "db2admin";                          // <- DB2 user name
-	    String password = "payments";                      // <- user password
+	    String password = "PASSSWORD";                      // <- user password
 	    String ns = "TEST";                        // <- JSON namespace aka DB2 Schema
 	    
 	    // build the required url 
